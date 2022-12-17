@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import '../src/style/main.sass'
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
-          <Route path="new" element={<NewBook />} />
+          <Route path="/new" element={<NewBook />} />
         </Route>
       </Routes>
     </BrowserRouter>
