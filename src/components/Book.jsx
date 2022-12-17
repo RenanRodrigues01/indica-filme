@@ -28,8 +28,11 @@ const Books = () => {
                 books.map((book) =>(
                     <div className="books" key={book._id} >
                         <h2>{book.titulo}</h2>
-                        <p>Autor: {book.autor.nome}</p>
-                        <p>Editora: {book.editora}</p>
+                        <div className="descripition">
+                            <p>Autor: {book.autor}</p>
+                            <p>Genero: {book.genero}</p>
+                            <p>Editora: {book.editora}</p>
+                        </div>
                     </div>
                 ))
             )}
