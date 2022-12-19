@@ -66,7 +66,7 @@ const NewBook = () => {
             onChange={(e) => setEditora(e.target.value)}
           />
         </div>
-        <input type="submit" value="Cadastar livro" />
+        <input type="submit" value="Cadastar livro" id='button' />
       </form>
       
     </div>
