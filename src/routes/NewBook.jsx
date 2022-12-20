@@ -14,14 +14,16 @@ const NewBook = () => {
   const createBook = async (e) => {
     e.preventDefault();
 
-    const book = {titulo, autor, genero, editora}
-
     await booksFetch.post("/livros", {
-      body: book,
-    })
+      "titulo": titulo,
+      "autor": autor,
+      "genero": genero,
+      "editora": editora
+    });
 
     navigate('/')
   }
+  
   return (
     <div className="new-book">
       <h2>Cadastar novo Livro</h2>

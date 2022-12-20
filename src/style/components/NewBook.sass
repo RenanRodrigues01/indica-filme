@@ -1,8 +1,10 @@
 @use '../variables'
+@use '../mixins'
 
 .new-book h2
     text-align: center
     margin: 2rem 0
+    font-size: 27px
     font-family: variables.$font-secundary
 
 form
@@ -30,8 +32,6 @@ form
             border-radius: 5px
 
 #button
-    padding: 1rem 2rem
-    background-color: rgba(0,0,0, 0.5)
+    @include mixins.btn
     color: variables.$text-color-primary
-    border-radius: 10px
-    font-weight: 700
+    cursor: pointer

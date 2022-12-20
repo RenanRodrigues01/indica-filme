@@ -29,9 +29,9 @@ const Books = () => {
                     <div className="books" key={book._id} >
                         <h2>{book.titulo}</h2>
                         <div className="descripition">
-                            <p>Autor: {book.autor}</p>
-                            <p>Genero: {book.genero}</p>
-                            <p>Editora: {book.editora}</p>
+                            <p><span>Autor:</span> {book.autor}</p>
+                            <p><span>Gênero:</span> {book.genero}</p>
+                            <p><span>Editora:</span> {book.editora}</p>
                         </div>
                     </div>
                 ))
