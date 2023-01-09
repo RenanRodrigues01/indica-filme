@@ -1,26 +1,7 @@
-import booksFetch from "../Axios/config"
-import { useState, useEffect } from "react"
 import '../style/components/Book.sass'
+import { Link } from "react-router-dom"
 
-const Books = () => {
-    const [books, setBooks] = useState([])
-
-    const getBooks = async () => {
-        try {
-            const response = await booksFetch.get("/livros");
-
-            const data = response.data;
-            console.log(data)
-            setBooks(data);
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        getBooks();
-    }, [])
+const Books = ({books}) => {
 
     return (
         <section className="book">
@@ -33,6 +14,7 @@ const Books = () => {
                             <p><span>Gênero:</span> {book.genero}</p>
                             <p><span>Editora:</span> {book.editora}</p>
                         </div>
+                        <Link to = {`/update/${book._id}`}>Editar</Link>
                     </div>
                 ))
             )}
