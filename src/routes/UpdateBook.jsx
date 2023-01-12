@@ -1,15 +1,14 @@
 import booksFetch from "../Axios/config"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+
 const UpdateBook = () => {
   const {id} = useParams()
-
   const [book, setBook] = useState([])
 
   const getBooks = async () => {
       try {
           const response = await booksFetch.get(`/livros/${id}`);
-
           const data = response.data;
           console.log(data)
           setBook(data);
@@ -18,16 +17,15 @@ const UpdateBook = () => {
           console.log(error);
       }
   }
-
   useEffect(() => {
       getBooks();
       console.log(book)
   }, [])
 
   return (
-    <div>
-      <h1>Atualizar livro</h1>
-      <p>testando git</p>
+    <div className="new-book">
+      <h2>Atualizar livro</h2>
+      
     </div>
   )
 }
