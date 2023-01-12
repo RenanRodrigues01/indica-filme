@@ -1,26 +1,35 @@
 //import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
-//import booksFetch from "../Axios/config"
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import booksFetch from "../Axios/config"
 import '../style/components/NewBook.sass'
 
-
+const schema = yup.object({
+  titulo: yup.string().required("* Titulo obrogatório"),
+  autor: yup.string().required("* Autor obrogatório"),
+  genero: yup.string().required("* Genero obrogatório"),
+  editora: yup.string().required("* Editora obrogatório"),
+}).required();
 
 const NewBook = () => {
   const navigate = useNavigate()
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const createBook = (data) => {
-    console.log(data)
-    /*await booksFetch.post("/livros", {
-      "titulo": book.titulo,
-      "autor": book.autor,
-      "genero": book.genero,
-      "editora": book.editora
-    });
+    
+    booksFetch.post("/livros", data);
+    try {
+      navigate('/')
 
-    navigate('/')*/
+    } catch (error) {
+      console.error(error, "não deu certo")
+    }
+
   }
   
   return (
@@ -35,6 +44,7 @@ const NewBook = () => {
                   name="titulo" 
                   {...register("titulo")}
               />
+              <span>{errors.titulo?.message}</span>
             </div>
 
             <div className="form-control">
@@ -43,6 +53,7 @@ const NewBook = () => {
                   name="autor" 
                   {...register("autor")}
               />
+              <span>{errors.autor?.message}</span>
             </div>
 
             <div className="form-control">
@@ -51,6 +62,7 @@ const NewBook = () => {
                   name="genero" 
                   {...register("genero")}
               />
+              <span>{errors.genero?.message}</span>
             </div>
 
             <div className="form-control">
@@ -59,6 +71,7 @@ const NewBook = () => {
                   name="editora" 
                   {...register("editora")}
               />
+              <span>{errors.editora?.message}</span>
             </div>
 
             <input type="submit" value="Cadastar livro" id='button' />

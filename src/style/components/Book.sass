@@ -1,15 +1,24 @@
 @use '../variables'
+@use '../mixins'
 
-.book
+section .book
     display: flex
     gap: 1rem
     flex-wrap: wrap
+    width: 100%
+    justify-content: space-evenly
     
     .books
+        display: flex
         padding: 1rem
-        background-color: variables.$background-color-darknes
+        margin: 0.2rem
+        background-color: variables.$bacground-color-grey
         border-radius: 10px
         width: 25vw
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        box-shadow: 15px 12px 9px 1px #323434
 
         h2
             font-weight: 800
@@ -19,8 +28,13 @@
             padding: 1rem
 
             p
+                padding: 0.2rem
                 font-weight: 400
                 font-size: 20px
 
                 span
                     font-weight: 800
+
+        .btn
+            @include mixins.btn
+            

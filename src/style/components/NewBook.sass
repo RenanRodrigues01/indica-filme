@@ -12,13 +12,14 @@ form
     width: 100%
     margin: 0 auto
     padding: 1rem
-    background-color: rgba(0,0,0, 0.2)
+    background-color: variables.$bacground-color-grey
     border-radius: 5px
+    margin-bottom: 1rem
 
     .form-control
         display: flex
         flex-direction: column
-        margin-bottom: 1rem
+        margin-bottom: 1.5rem 
 
         label
             margin-bottom: 0.5rem
@@ -30,6 +31,12 @@ form
             font-size: 17px
             border: none
             border-radius: 5px
+
+        span
+            margin-top: 4.9rem
+            color: red
+            position: absolute
+            font-weight: 700
 
 #button
     @include mixins.btn

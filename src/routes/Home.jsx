@@ -10,9 +10,7 @@ const Home = () => {
   const getBooks = async () => {
       try {
           const response = await booksFetch.get("/livros");
-
           const data = response.data;
-          console.log(data)
           setBooks(data);
 
       } catch (error) {
@@ -22,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
       getBooks();
-  }, [])
+  }, [books])
 
   return (
     <section>

@@ -14,7 +14,7 @@ const Books = ({books}) => {
                             <p><span>Gênero:</span> {book.genero}</p>
                             <p><span>Editora:</span> {book.editora}</p>
                         </div>
-                        <Link to = {`/update/${book._id}`}>Editar</Link>
+                        <Link to = {`/update/${book._id}`} className="btn">Editar</Link>
                     </div>
                 ))
             )}
