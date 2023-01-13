@@ -4,30 +4,40 @@ import { useParams } from "react-router-dom"
 
 const UpdateBook = () => {
   const {id} = useParams()
-  const [book, setBook] = useState([])
+  const [book, setBook] = useState({})
+  const [editing, setEditing] = useState(false);
 
-  const getBooks = async () => {
+  const getBook = async () => {
+    const response = await booksFetch.get(`/livros/${id}`);
       try {
-          const response = await booksFetch.get(`/livros/${id}`);
           const data = response.data;
-          console.log(data)
           setBook(data);
-
       } catch (error) {
           console.log(error);
       }
   }
   useEffect(() => {
-      getBooks();
-      console.log(book)
+      getBook();
   }, [])
 
-  return (
-    <div className="new-book">
-      <h2>Atualizar livro</h2>
-      
-    </div>
-  )
+  const updateKey =(e) => {
+    if(e.key === 'Enter'){
+      setEditing(false)
+    }
+  }
+
+  if(editing) {
+    return (
+      <input type="text" onKeyDown={updateKey} onChange={(e) => setBook({ titulo: e.target.value})}/>
+    );
+  }else{
+    return (
+      <>
+        <h3>autor</h3>
+        <p onClick={() => setEditing(true)}>{book.titulo}</p>
+      </>
+    );
+  }
 }
 
 export default UpdateBook
