@@ -18,9 +18,9 @@ const Editing = ({ campo, value, callBack }) => {
         );
       }else{
         return (
-          <>
-            <span>{value}: <p onClick={() => setEditing(true)}>{campo}</p></span>
-          </>
+          <div>
+            <p onClick={() => setEditing(true)}><span>{value}:</span> {campo}</p>
+          </div>
         );
     }
 }

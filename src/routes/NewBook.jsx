@@ -33,7 +33,7 @@ const NewBook = () => {
   }
   
   return (
-    <div className="new-book">
+    <section className="new-book">
       <h2>Cadastar novo Livro</h2>
 
       <form onSubmit={handleSubmit(createBook)}>
@@ -77,7 +77,7 @@ const NewBook = () => {
             <input type="submit" value="Cadastar livro" id='button' />
       </form>
 
-    </div>
+    </section>
   )
 }
 

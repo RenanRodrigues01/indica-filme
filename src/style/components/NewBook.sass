@@ -1,7 +1,7 @@
 @use '../variables'
 @use '../mixins'
 
-.new-book h2
+section h2
     text-align: center
     margin: 2rem 0
     font-size: 27px
@@ -17,8 +17,7 @@ form
     margin-bottom: 1rem
 
     .form-control
-        display: flex
-        flex-direction: column
+        @include mixins.flex-column
         margin-bottom: 1.5rem 
 
         label

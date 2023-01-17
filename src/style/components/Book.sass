@@ -9,16 +9,15 @@ section .book
     justify-content: space-evenly
     
     .books
-        display: flex
+        @include mixins.flex-column
         padding: 1rem
         margin: 0.2rem
         background-color: variables.$bacground-color-grey
         border-radius: 10px
         width: 25vw
-        flex-direction: column
         align-items: center
         justify-content: space-around
-        box-shadow: 15px 12px 9px 1px #323434
+        box-shadow: variables.$box-shadow
 
         h2
             font-weight: 800
@@ -30,7 +29,7 @@ section .book
             p
                 padding: 0.2rem
                 font-weight: 400
-                font-size: 20px
+                font-size: variables.$font-size-pattern
 
                 span
                     font-weight: 800
