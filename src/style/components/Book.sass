@@ -19,6 +19,15 @@ section .book
         justify-content: space-around
         box-shadow: variables.$box-shadow
 
+        @include mixins.intermediate-width
+            width: 35vw
+
+        @include mixins.medium-width
+            width: 50vw
+
+        @include mixins.mobile-width
+            width: 70vw
+
         h2
             font-weight: 800
             font-size: 25px
