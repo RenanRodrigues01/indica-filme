@@ -20,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
       getBooks();
-  }, [books])
+  }, [])
 
   return (
     <section>
