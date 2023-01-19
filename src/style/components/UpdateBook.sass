@@ -5,6 +5,10 @@
     width: 50vw
     margin: 1rem auto
 
+    @include mixins.mobile-width
+        width: 75vw
+
+
     .main-updateBook 
         @include mixins.flex-column
         gap: 0.5rem
@@ -31,6 +35,9 @@
             border-radius: 5px
             font-size: variables.$font-size-pattern
             width: 30vw
+
+            @include mixins.mobile-width
+                width: 50vw
 
         .btn
             @include mixins.btn

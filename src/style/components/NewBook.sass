@@ -16,6 +16,10 @@ form
     border-radius: 5px
     margin-bottom: 1rem
 
+    @include mixins.mobile-width
+        max-width: 80vw
+
+
     .form-control
         @include mixins.flex-column
         margin-bottom: 1.5rem 

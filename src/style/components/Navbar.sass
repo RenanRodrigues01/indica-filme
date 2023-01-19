@@ -8,6 +8,11 @@
     padding: 1rem 2rem
     background-color: variables.$bacground-color-grey
 
+    @include mixins.mobile-width
+        flex-direction: column
+        gap: 1rem
+
+
     .title a
         font-family: variables.$font-secundary
         font-size: 33px
