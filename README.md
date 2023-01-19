@@ -1,7 +1,11 @@
 
 # Indica Livro
 
-Indica livros é uma plataforma de sugestão de livros. Indique seus livros favoritos para que outras pessoas possam cohecê-los. 
+Indica livros é uma plataforma de sugestão de livros. Indique seus livros favoritos neste [link](https://indica-livro.vercel.app/) para que outras pessoas possam cohecê-los.
+
+### `Visual do projeto`
+![indica_livro-completo](https://user-images.githubusercontent.com/111028127/213439423-4b5248d0-35dc-455b-9a5c-c03fe4ef9eb2.gif)
+
 ## Principais objetivos 
 
 - Trabalhar melhor com componetização do framework React, fazendo um código mais limpo e de fácil manutenção.
@@ -21,7 +25,7 @@ Ainda tive a oportinidade de conhcer e utilizar o Hook [react-hook-form](https:/
  - [Sass](https://sass-lang.com/);
  - [Axios](https://react-hook-form.com/);
  - [react-router-dom]("");
- - [reacr-hook-form](https://react-hook-form.com/);
+ - [react-hook-form](https://react-hook-form.com/);
 ## Rodando localmente
 
 Clone o projeto
